@@ -1,8 +1,21 @@
 import './shows.css';
 
 /** A navbar that allows users to choose between a list of shows */
-const ShowSelection = () => {
-  return <nav className='shows'></nav>;
+const ShowSelection = ({ shows, setSelectedShow, setSelectedEpisode }) => {
+  const handleSelect = (show) => {
+    setSelectedShow(show);
+    setSelectedEpisode();
+  };
+
+  return (
+    <nav className='shows'>
+      {shows.map((show, index) => (
+        <a key={index} className='show' onClick={() => handleSelect(show)}>
+          {show.name}
+        </a>
+      ))}
+    </nav>
+  );
 };
 
 export default ShowSelection;
