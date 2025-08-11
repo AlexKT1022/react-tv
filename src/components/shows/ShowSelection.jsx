@@ -4,7 +4,7 @@ import './shows.css';
 const ShowSelection = ({ shows, setSelectedShow, setSelectedEpisode }) => {
   const handleSelect = (show) => {
     setSelectedShow(show);
-    setSelectedEpisode();
+    setSelectedEpisode(undefined);
   };
 
   return (
